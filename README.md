@@ -9,7 +9,7 @@ How to start using this software
 ================================
 
 1. Extract the contents of the archive into your apache's web site root directory (or a subdirectory thereof).
-2. Edit the file /path/to/aurora/config.php, and set the 'SITE_URL, SQL_USER, SQL_PASS, SQL_DB, SQL_HOST, SQL_PORT' variables appropriately.
+2. Edit the file /path/to/aurora/config.php, and set the '''SITE_URL, SQL_USER, SQL_PASS, SQL_DB, SQL_HOST, SQL_PORT''' variables appropriately.
 3. Run the sql file present in /path/to/aurora/db/auroa.sql on the mysql server to setup various tables and procedures.
 4. Open the website via your browser. If the site is loaded perfectly then this means that a proper connection to the database could be established.
 5. This software is now ready to use. (You may need to set up Judge Script if you haven't done it yet)
