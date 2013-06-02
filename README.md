@@ -5,11 +5,12 @@ SPOJ like judge to automatically judge the submitted solution. Derived from its 
 Its web interface is redesigned from scratch to make it look more SPOJ like so that users find it to comfortable to adjust and can also serve as a platform for practice as well as compete with other teams. Few features are added so that the administrators find it easy to handle.
 Its database structure hasn't changed much and is compatible with initial version. It is designed to meet the requirement specific to CQM matches hosted at BIT Mesra but its registration process can be easily changed to meet requirement of any other organisation.
 
-### Setup Judge Python Script
+Setup Judge Python Script
+-------------------------
 
 Python script for judge can be found in judge folder. To protech rest of the machine from potenial treat it is recommended to run the judge in a sandboxed environment to trap it inside a folder or run it on a virtual machine. Both processes are described below.
 
-**How to Setup Sandbox Environment**
+### How to Setup Sandbox Environment
 Judge is tarped inside an area in machine by using chroot command in linux. But first one needs to set up necessary os files on which the judge will run. Since this was tested on ubuntu 12.04, following commands are specific to this version of linux. But similar commands can be used on other linux distributions.
 1. Fetch os files <code>sudo debootstrap --variant=buildd --arch i386 precise /path/to/chroot/directory/ http://archive.ubuntu.com/ubuntu</code>. This is one time process and will fetch and install ubuntu precise x86 version in /path/to/chroot/directory/.
 2. Bind process in chroot directory to the host OS. This is necessary for Java and Javascirpt interpreter and needs to be done each time the host OS is booted. <code>sudo mount -o bind /proc /path/to/chroot/directory/proc</code>
@@ -33,8 +34,7 @@ python judge.py -judge -unsafe -cache &
 * To enquire about the job number use <code>jobs</code>.
 * To shutdown judge simply bring it to foreground and send keyboard interupt i.e, CTRL+C
 
-**How to Setup Judge in Virtual Machine**
-
+### How to Setup Judge in Virtual Machine 
 
 Follow following steps.
 1. Install Ubuntu 12.04 on a virtual machine.
@@ -51,7 +51,8 @@ python judge.py -judge -unsafe -cache
 	* <code>-unsafe</code> option set the judgement for all languages (some which can used to perform suspicious operations)
 	* <code>-cache</code> option tells the judge to cache input and correct output first time the solution for a problem is submitted and later use this cache rather than fetching data from database each time. Judge can be shutdown by keyboard intrupt i.e, CTRL+C
 
-### How to start using this software
+How to start using this software
+--------------------------------
 
 1. Extract the contents of the archive into your apache's web site root directory (or a subdirectory thereof).
 2. Edit the file /path/to/aurora/config.php, and set the <code>SITE_URL, SQL_USER, SQL_PASS, SQL_DB, SQL_HOST, SQL_PORT</code> variables appropriately.
@@ -60,7 +61,8 @@ python judge.py -judge -unsafe -cache
 5. This software is now ready to use. (You may need to set up Judge Script if you haven't done it yet)
 6. You may check FAQ sections for further information.
 
-### Administration
+Administration
+--------------
 
 1. Login as an Administrator (initial credentials : UID => judge, PASS => aurora) and go through the various settings page in Admin menu. Here you will find various option like judge mode (initially set to disabled), notice, problems setting, contest settings etc.
 2. You should change your password in Account > Account Settings page. If you want you can change your other info on Team Settings page.
@@ -84,7 +86,8 @@ python judge.py -judge -unsafe -cache
 8. When the timer expires, the contest status is automatically set to 'Disabled', and submissions are no longer allowed. It may take a bit longer than that for the judgement of all submissions to take place.
 9. If you wish, you may open the submission statistics of all problems and make certain accepted solutions 'Public' thereby allowing everyone to see the code and can even set the Display IO field in problem settings page to 'Yes' (this will allow Normal users to see their mistakes, Note : This is not recommended for problems with large input / output file). The general format of the links to these codes will be "http://[server-address]/[path]/viewsolution/[Run ID]".
 
-### Acknowledgements
+Acknowledgements
+----------------
 
 * Kaustub Karkare, creator of Aurora Online Judge from which this version was derived.
 * Siddhartha Sahu, created functions.php which is extensively used for database interaction.
