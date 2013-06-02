@@ -34,6 +34,8 @@ python judge.py -judge -unsafe -cache &
 * To shutdown judge simply bring it to foreground and send keyboard interupt i.e, CTRL+C
 
 **How to Setup Judge in Virtual Machine**
+
+
 Follow following steps.
 1. Install Ubuntu 12.04 on a virtual machine.
 2. Install required compliers/interpreters (one time process).
