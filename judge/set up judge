@@ -1,0 +1,4 @@
+sudo debootstrap --variant=buildd --arch i386 precise /path/to/chroot/ http://archive.ubuntu.com/ubuntu
+sudo mount -o bind /proc /path/to/chroot/proc
+sudo chroot /path/to/chroot
+

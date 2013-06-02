@@ -1,0 +1,408 @@
+[2013-06-02 15:06:17]
+Query error:
+insert into logs value ('1370165777', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnahs
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:06:22]
+Query error:
+insert into logs value ('1370165782', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:09:20]
+Query error:
+insert into logs value ('1370165960', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:12:53]
+Query error:
+insert into logs value ('1370166173', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:14:42]
+Query error:
+insert into logs value ('1370166282', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => aurora
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:14:57]
+Query error:
+insert into logs value ('1370166297', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/edit
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [oldpass] => aurora
+    [pass1] => johnnash
+    [repass] => johnnash
+    [group] => 5
+    [update] => update
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:14:57]
+Query error:
+update teams set pass = 'b17f9b5a19891f4c84d44863816d19d4' , gid='5' where tid='1'
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:15:01]
+Query error:
+insert into logs value ('1370166301', '127.0.0.1', 'Array
+(
+    [tid] => 0
+    [teamname] => 
+    [status] => 
+    [time] => 1370165768
+    [ghost] => 0
+    [message] => Array
+        (
+        )
+
+    [url] => /aurora/edit
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:15:07]
+Query error:
+insert into logs value ('1370166307', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:31:38]
+Query error:
+insert into logs value ('1370167298', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:32:22]
+Query error:
+insert into logs value ('1370167342', '127.0.0.1', 'Array
+(
+    [url] => /aurora/register
+)
+', 'Array
+(
+    [teamname] => AMP
+    [password] => virgin==ture
+    [repassword] => virgin==true
+    [group] => 5
+    [name1] => Pushkar Anand
+    [roll1] => BE/1322/2010
+    [branch1] => IT
+    [email1] => pushkar8723@gmail.com
+    [phno1] => 8809956170
+    [name2] => Milan Pandy
+    [roll2] => BE/1226/2010
+    [branch2] => IT
+    [email2] => studmilan@gmail.com
+    [phno2] => 
+    [name3] => Animesh Mishra
+    [roll3] => BE/1376/2010
+    [branch3] => IT
+    [email3] => anizuckerberg@gmail.com
+    [phno3] => 
+    [register] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:32:34]
+Query error:
+insert into logs value ('1370167354', '127.0.0.1', 'Array
+(
+    [url] => /aurora/register
+    [reg] => Array
+        (
+            [password] => virgin==ture
+            [repassword] => virgin==true
+            [group] => 5
+            [register] => Submit
+        )
+
+)
+', 'Array
+(
+    [teamname] => AMP
+    [password] => virgin==true
+    [repassword] => virgin==true
+    [group] => 5
+    [name1] => Pushkar Anand
+    [roll1] => BE/1322/2010
+    [branch1] => IT
+    [email1] => pushkar8723@gmail.com
+    [phno1] => 8809956170
+    [name2] => Milan Pandy
+    [roll2] => BE/1226/2010
+    [branch2] => IT
+    [email2] => studmilan@gmail.com
+    [phno2] => 
+    [name3] => Animesh Mishra
+    [roll3] => BE/1376/2010
+    [branch3] => IT
+    [email3] => anizuckerberg@gmail.com
+    [phno3] => 
+    [register] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:32:34]
+Query error:
+Insert into teams (teamname, pass, status, name1, roll1, branch1, email1, phone1, name2, roll2, branch2, email2, phone2, name3, roll3, branch3, email3, phone3, score, penalty, gid) 
+                        values ('AMP', '6983bf490afefb170a87fc1c003f3dcd', 'Normal', 'Pushkar Anand', 'BE/1322/2010','IT','pushkar8723@gmail.com','8809956170','Milan Pandy', 'BE/1226/2010', 'IT', 'studmilan@gmail.com', '', 'Animesh Mishra', 'BE/1376/2010', 'IT','anizuckerberg@gmail.com','','0','0','5')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:32:42]
+Query error:
+insert into logs value ('1370167362', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+    [reg] => Array
+        (
+            [password] => virgin==ture
+            [repassword] => virgin==true
+            [group] => 5
+            [register] => Submit
+        )
+
+)
+', 'Array
+(
+    [teamname] => AMP
+    [password] => virgin==true
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:32:52]
+Query error:
+insert into logs value ('1370167372', '127.0.0.1', 'Array
+(
+    [url] => /aurora/problems/TEST
+    [reg] => Array
+        (
+            [password] => virgin==ture
+            [repassword] => virgin==true
+            [group] => 5
+            [register] => Submit
+        )
+
+    [team] => Array
+        (
+            [id] => 196
+            [name] => AMP
+            [status] => Normal
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:32:58]
+Query error:
+insert into logs value ('1370167378', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-02 15:41:44]
+Query error:
+insert into logs value ('1370167904', '127.0.0.1', 'Array
+(
+    [url] => /aurora/home
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
