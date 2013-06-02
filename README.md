@@ -19,6 +19,8 @@ Judge is tarped inside an area in machine by using chroot command in linux. But 
 4. Install required compliers/interpreters (one time process).
 <code>
 sudo apt-get update
+</code>
+<code>
 sudo apt-get install bf g++ fpc mono-gmcs openjdk-6-jdk perl php5 python python-mysqldb rhino ruby
 </code>
 5. Run the python script in background.
