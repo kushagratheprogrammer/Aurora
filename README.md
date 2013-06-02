@@ -23,7 +23,7 @@ sudo apt-get update
 <code>
 sudo apt-get install bf g++ fpc mono-gmcs openjdk-6-jdk perl php5 python python-mysqldb rhino ruby
 </code>
-5. Run the python script in background.
+5. Edit <code>sql_hostname, sql_hostport, sql_username, sql_password, sql_database, HOST, PORT</code> appropriately. Run the python script in background.
 <code>
 python judge.py -judge -unsafe -cache &
 </code>
@@ -47,7 +47,7 @@ Follow following steps.
 sudo apt-get update
 sudo apt-get install bf g++ fpc mono-gmcs openjdk-6-jdk perl php5 python python-mysqldb rhino ruby
 </code>
-3. Run the python script.
+3. Edit <code>sql_hostname, sql_hostport, sql_username, sql_password, sql_database, HOST, PORT</code> appropriately. Run the python script.
 <code>
 python judge.py -judge -unsafe -cache
 </code>
