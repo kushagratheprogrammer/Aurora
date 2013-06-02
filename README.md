@@ -12,6 +12,7 @@ Python script for judge can be found in judge folder. To protech rest of the mac
 
 ### How to Setup Sandbox Environment
 Judge is tarped inside an area in machine by using chroot command in linux. But first one needs to set up necessary os files on which the judge will run. Since this was tested on ubuntu 12.04, following commands are specific to this version of linux. But similar commands can be used on other linux distributions.
+
 1. Fetch os files <code>sudo debootstrap --variant=buildd --arch i386 precise /path/to/chroot/directory/ http://archive.ubuntu.com/ubuntu</code>. This is one time process and will fetch and install ubuntu precise x86 version in /path/to/chroot/directory/.
 2. Bind process in chroot directory to the host OS. This is necessary for Java and Javascirpt interpreter and needs to be done each time the host OS is booted. <code>sudo mount -o bind /proc /path/to/chroot/directory/proc</code>
 3. Change to chroot directory <code>sudo chroot /path/to/chroot/directory</code>.
@@ -30,13 +31,14 @@ python judge.py -judge -unsafe -cache &
 6. Exit chroot by simply using <code>exit</code>.
 
 **Note :** 
-* To bring judge to foreground use <code>fg <jobnumber></code>. 
+* To bring judge to foreground use <code>fg (jobnumber)</code>. 
 * To enquire about the job number use <code>jobs</code>.
 * To shutdown judge simply bring it to foreground and send keyboard interupt i.e, CTRL+C
 
 ### How to Setup Judge in Virtual Machine 
 
 Follow following steps.
+
 1. Install Ubuntu 12.04 on a virtual machine.
 2. Install required compliers/interpreters (one time process).
 <code>
