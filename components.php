@@ -131,4 +131,38 @@ function rankings() {
     }
     echo "</table>";
 }
+
+function pagination($noofpages, $url, $page, $maxcontent){
+    if ($noofpages > 1) {
+        if ($page - ($maxcontent/2) > 0)
+            $start = $page - 5;
+        else
+            $start = 1;
+	if($noofpages >= $start + $maxcontent) 
+		$end = $start + $maxcontent;
+	else
+		$end = $noofpages;
+        ?>
+        <div class ="pagination pagination-centered">
+            <ul>        
+                <?php if ($page > 1) { ?>
+                    <li><a href="<?php echo $url. "&page=1"; ?>">First</a></li>
+                    <li><a href="<?php echo $url. "&page=" . ($page - 1); ?>">Prev</a></li>
+                    <?php
+                }
+                for ($i = $start; $i <= $end; $i++) {
+                    ?>
+                    <li <?php echo ($i == $page) ? ("class='disabled'") : (''); ?>><a href="<?php echo ($i != $page) ? ($url . "&page=" . $i) : ("#"); ?>"><?php echo $i; ?></a></li>
+                    <?php
+                }
+                if ($page < $noofpages) {
+                    ?>
+                    <li><a href="<?php echo $url . "&page=" . ($page + 1); ?>">Next</a></li>
+                    <li><a href="<?php echo $url . "&page=" . $noofpages; ?>">Last</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <?php
+    }
+}
 ?>

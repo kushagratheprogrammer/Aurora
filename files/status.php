@@ -40,35 +40,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
         echo "<tr" . (($row['result'] == "AC") ? (" class='success'>") : (">")) . "<td>" . (($row['access'] == 'public' || (isset($_SESSION['loggedin']) && ($_SESSION['team']['status'] == "Admin" || $_SESSION['team']['id'] == $row['tid']))) ? ("<a href='" . SITE_URL . "/viewsolution/$row[rid]'>$row[rid]</a>") : ("$row[rid]")) . "</td><td><a href='" . SITE_URL . "/teams/$team[teamname]'>$team[teamname]</a></td><td><a href='" . SITE_URL . "/problems/$prob[code]'>$prob[name]</a></td><td>$row[language]</td><td>$row[time]</td><td>$row[result]</td><td>" . (($row['access'] == 'public' || (isset($_SESSION['loggedin']) && ($_SESSION['team']['status'] == "Admin" || $_SESSION['team']['id'] == $row['tid']))) ? ("<a class='btn btn-primary' href='" . SITE_URL . "/viewsolution/$row[rid]'>Code</a>") : ("")) . "</td></tr>";
     }
     echo "</table>";
-    if ($result['noofpages'] > 1) {
-        if ($page - 5 > 0)
-            $start = $page - 5;
-        else
-            $start = 1;
-	if($result['noofpages'] >= $start + 10) 
-		$end = $start + 10;
-	else
-		$end = $result['noofpages'];
-        ?>
-        <div class ="pagination pagination-centered">
-            <ul>        
-                <?php if ($page > 1) { ?>
-                    <li><a href="<?php echo SITE_URL . "/status/$_GET[code]&page=" . ($page - 1); ?>">Prev</a></li>
-                    <?php
-                }
-                for ($i = $start; $i <= $end; $i++) {
-                    ?>
-                    <li <?php echo ($i == $page) ? ("class='disabled'") : (''); ?>><a href="<?php echo ($i != $page) ? (SITE_URL . "/status/$_GET[code]&page=" . $i) : ("#"); ?>"><?php echo $i; ?></a></li>
-                    <?php
-                }
-                if ($page < $result['noofpages']) {
-                    ?>
-                    <li><a href="<?php echo SITE_URL . "/status/$_GET[code]&page=" . ($page + 1); ?>">Next</a></li>
-                <?php } ?>
-            </ul>
-        </div>
-        <?php
-    }
+    pagination($result['noofpages'], SITE_URL."/status/$_GET[code]", $page, 10);
 } else {
     echo "<br/><br/><br/><div style='padding: 10px;'><h1>Lockdown Mode :(</h1>This feature is now offline as Judge is in Lockdown mode.</div><br/><br/><br/>";
 }

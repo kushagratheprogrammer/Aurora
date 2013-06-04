@@ -24,9 +24,9 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                         <?php
                         echo "$res[name1] ($res[branch1])";
                         if ($res['name2'] != "")
-                            echo "$res[name2] ($res[branch2])";
+                            echo ", $res[name2] ($res[branch2])";
                         if ($res['name3'] != "")
-                            echo "$res[name3] ($res[branch3])";
+                            echo ", $res[name3] ($res[branch3])";
                         ?>
                     </td>
                 </tr>
