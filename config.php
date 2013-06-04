@@ -16,6 +16,9 @@ displayErrors(FALSE);                   // Display PHP errors or not.
  * 
  * 
  */
+
+session_set_cookie_params (0, substr(SITE_URL, strlen("http://" . $_SERVER['HTTP_HOST'])));
+
 function displayErrors($option = true) {
   if ($option) {
     error_reporting(E_ALL | E_STRICT);
