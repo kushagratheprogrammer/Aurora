@@ -406,3 +406,1592 @@ insert into logs value ('1370167904', '127.0.0.1', 'Array
 Error: SQLSTATE[HY000]: General error
 /host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
 ======================================================================
+[2013-06-04 15:13:26]
+Query error:
+insert into logs value ('1370339006', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-04 15:13:48]
+Query error:
+insert into logs value ('1370339028', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminlog
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-05 12:17:45]
+Query error:
+insert into logs value ('1370414865', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => nikolateslas
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-05 12:18:00]
+Query error:
+insert into logs value ('1370414880', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-05 12:18:22]
+Query error:
+insert into logs value ('1370414902', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 18:43:58]
+Query error:
+insert into logs value ('1370610838', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+insert into logs value ('1370612219', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/NODUES
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 54
+    [name] => No Dues Dilemma
+    [code] => NODUES
+    [score] => 100
+    [type] => 
+    [pgroup] => #19 CQM-9
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 1
+    [status] => Active
+    [languages] => C,C++,Java
+    [statement] => <strong>Problem Description :</strong>
+
+Its that dreaded time of the year again, when BIT-ians have to spend hours which even translate into days for a few unfortunate souls, waiting in queues to get their \'No-Dues\' application signed, just so that they can appear for the extremely pleasurable experience called the End Semester Exams. Much like a treasure hunt, students run from one room to the other, trying to get the different fields in the forms signed. There are a few offices in which more than one field is validated and the clerks at each office are kind enough to redirect you to your next destination. To make sure that the students have multiple ways of suffering to choose from, BIT now has more than one room for a few of the offices. Keep in mind that each queue moves at different speeds. Ultimately, once every field has been verified and signed, you have to bring the form to the Dean, Mr. Almighty for his signature.
+To simplify the matter, you and your friends prepared a map of the offices. Now provided the rate at which the queue in front of each of the offices(/rooms) moves (Rate = The number of people per day), your task is to calculate the number of students who will actually make it out of Mr. Almighty\'s Office (alive :P).
+
+<image /><
+
+<strong>Input Specification :</strong>
+<ul><li>There are multiple input sets, each of whose first line consists of two inputs n and e where n = the number of rooms (assuming that the students are initially in Room #1) and p = the total number of paths between the Rooms.</li><li>Next we have \'p\' input lines where we specify two room numbers and the rate at which the queue moves between them.</li><li>On the next line we specify the room number of the Dean\'s office.</li><li>Assume that there are infinite number of students and that all of them are initially in Room #1.</li><li>Read till End Of File.</li></ul>
+<strong>Output Specifications :</strong>
+
+For each test case, print out a single line the number of students who get out of the Dean\'s office in one day.
+
+<strong>Constraints :</strong>
+<ul><li>5 <= Number of Rooms <= 100</li><li>1 <= Room Numbers <= 100</li><li>1 <= Rate <= 1000</li></ul>
+
+<strong>Sample Input :</strong>
+
+<code>
+7 9
+1 2 100
+1 3 150
+2 4 75
+2 5 80
+3 4 75
+3 5 90
+4 7 65
+5 6 70
+6 7 85
+7
+</code>
+
+<strong>Sample Output :</strong>
+
+<code>
+135
+</code>
+
+<em>Question Setter : Vishnu Mohandas</em>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set name = 'No Dues Dilemma' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set code = 'NODUES' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set score = '100' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set type = '' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set pgroup = '#19 CQM-9' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set contest = 'practice' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set timelimit = '1' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set status = 'Active' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set languages = 'C,C++,Java' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set displayio = '1' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set maxfilesize = '50000' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:06:59]
+Query error:
+update problems set statement = '<strong>Problem Description :</strong>
+
+Its that dreaded time of the year again, when BIT-ians have to spend hours which even translate into days for a few unfortunate souls, waiting in queues to get their \'No-Dues\' application signed, just so that they can appear for the extremely pleasurable experience called the End Semester Exams. Much like a treasure hunt, students run from one room to the other, trying to get the different fields in the forms signed. There are a few offices in which more than one field is validated and the clerks at each office are kind enough to redirect you to your next destination. To make sure that the students have multiple ways of suffering to choose from, BIT now has more than one room for a few of the offices. Keep in mind that each queue moves at different speeds. Ultimately, once every field has been verified and signed, you have to bring the form to the Dean, Mr. Almighty for his signature.
+To simplify the matter, you and your friends prepared a map of the offices. Now provided the rate at which the queue in front of each of the offices(/rooms) moves (Rate = The number of people per day), your task is to calculate the number of students who will actually make it out of Mr. Almighty\'s Office (alive :P).
+
+<image /><
+
+<strong>Input Specification :</strong>
+<ul><li>There are multiple input sets, each of whose first line consists of two inputs n and e where n = the number of rooms (assuming that the students are initially in Room #1) and p = the total number of paths between the Rooms.</li><li>Next we have \'p\' input lines where we specify two room numbers and the rate at which the queue moves between them.</li><li>On the next line we specify the room number of the Dean\'s office.</li><li>Assume that there are infinite number of students and that all of them are initially in Room #1.</li><li>Read till End Of File.</li></ul>
+<strong>Output Specifications :</strong>
+
+For each test case, print out a single line the number of students who get out of the Dean\'s office in one day.
+
+<strong>Constraints :</strong>
+<ul><li>5 <= Number of Rooms <= 100</li><li>1 <= Room Numbers <= 100</li><li>1 <= Rate <= 1000</li></ul>
+
+<strong>Sample Input :</strong>
+
+<code>
+7 9
+1 2 100
+1 3 150
+2 4 75
+2 5 80
+3 4 75
+3 5 90
+4 7 65
+5 6 70
+6 7 85
+7
+</code>
+
+<strong>Sample Output :</strong>
+
+<code>
+135
+</code>
+
+<em>Question Setter : Vishnu Mohandas</em>' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+insert into logs value ('1370612227', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/NODUES
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 54
+    [name] => No Dues Dilemma
+    [code] => NODUES
+    [score] => 100
+    [type] => 
+    [pgroup] => #19 CQM-9
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 1
+    [status] => Active
+    [languages] => C,C++,Java
+    [statement] => <strong>Problem Description :</strong>
+
+Its that dreaded time of the year again, when BIT-ians have to spend hours which even translate into days for a few unfortunate souls, waiting in queues to get their \'No-Dues\' application signed, just so that they can appear for the extremely pleasurable experience called the End Semester Exams. Much like a treasure hunt, students run from one room to the other, trying to get the different fields in the forms signed. There are a few offices in which more than one field is validated and the clerks at each office are kind enough to redirect you to your next destination. To make sure that the students have multiple ways of suffering to choose from, BIT now has more than one room for a few of the offices. Keep in mind that each queue moves at different speeds. Ultimately, once every field has been verified and signed, you have to bring the form to the Dean, Mr. Almighty for his signature.
+To simplify the matter, you and your friends prepared a map of the offices. Now provided the rate at which the queue in front of each of the offices(/rooms) moves (Rate = The number of people per day), your task is to calculate the number of students who will actually make it out of Mr. Almighty\'s Office (alive :P).
+
+<image />
+
+<strong>Input Specification :</strong>
+<ul><li>There are multiple input sets, each of whose first line consists of two inputs n and e where n = the number of rooms (assuming that the students are initially in Room #1) and p = the total number of paths between the Rooms.</li><li>Next we have \'p\' input lines where we specify two room numbers and the rate at which the queue moves between them.</li><li>On the next line we specify the room number of the Dean\'s office.</li><li>Assume that there are infinite number of students and that all of them are initially in Room #1.</li><li>Read till End Of File.</li></ul>
+<strong>Output Specifications :</strong>
+
+For each test case, print out a single line the number of students who get out of the Dean\'s office in one day.
+
+<strong>Constraints :</strong>
+<ul><li>5 <= Number of Rooms <= 100</li><li>1 <= Room Numbers <= 100</li><li>1 <= Rate <= 1000</li></ul>
+
+<strong>Sample Input :</strong>
+
+<code>
+7 9
+1 2 100
+1 3 150
+2 4 75
+2 5 80
+3 4 75
+3 5 90
+4 7 65
+5 6 70
+6 7 85
+7
+</code>
+
+<strong>Sample Output :</strong>
+
+<code>
+135
+</code>
+
+<em>Question Setter : Vishnu Mohandas</em>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set name = 'No Dues Dilemma' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set code = 'NODUES' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set score = '100' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set type = '' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set pgroup = '#19 CQM-9' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set contest = 'practice' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set timelimit = '1' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set status = 'Active' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set languages = 'C,C++,Java' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set displayio = '1' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set maxfilesize = '50000' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:07]
+Query error:
+update problems set statement = '<strong>Problem Description :</strong>
+
+Its that dreaded time of the year again, when BIT-ians have to spend hours which even translate into days for a few unfortunate souls, waiting in queues to get their \'No-Dues\' application signed, just so that they can appear for the extremely pleasurable experience called the End Semester Exams. Much like a treasure hunt, students run from one room to the other, trying to get the different fields in the forms signed. There are a few offices in which more than one field is validated and the clerks at each office are kind enough to redirect you to your next destination. To make sure that the students have multiple ways of suffering to choose from, BIT now has more than one room for a few of the offices. Keep in mind that each queue moves at different speeds. Ultimately, once every field has been verified and signed, you have to bring the form to the Dean, Mr. Almighty for his signature.
+To simplify the matter, you and your friends prepared a map of the offices. Now provided the rate at which the queue in front of each of the offices(/rooms) moves (Rate = The number of people per day), your task is to calculate the number of students who will actually make it out of Mr. Almighty\'s Office (alive :P).
+
+<image />
+
+<strong>Input Specification :</strong>
+<ul><li>There are multiple input sets, each of whose first line consists of two inputs n and e where n = the number of rooms (assuming that the students are initially in Room #1) and p = the total number of paths between the Rooms.</li><li>Next we have \'p\' input lines where we specify two room numbers and the rate at which the queue moves between them.</li><li>On the next line we specify the room number of the Dean\'s office.</li><li>Assume that there are infinite number of students and that all of them are initially in Room #1.</li><li>Read till End Of File.</li></ul>
+<strong>Output Specifications :</strong>
+
+For each test case, print out a single line the number of students who get out of the Dean\'s office in one day.
+
+<strong>Constraints :</strong>
+<ul><li>5 <= Number of Rooms <= 100</li><li>1 <= Room Numbers <= 100</li><li>1 <= Rate <= 1000</li></ul>
+
+<strong>Sample Input :</strong>
+
+<code>
+7 9
+1 2 100
+1 3 150
+2 4 75
+2 5 80
+3 4 75
+3 5 90
+4 7 65
+5 6 70
+6 7 85
+7
+</code>
+
+<strong>Sample Output :</strong>
+
+<code>
+135
+</code>
+
+<em>Question Setter : Vishnu Mohandas</em>' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+insert into logs value ('1370612268', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/NODUES
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 54
+    [name] => No Dues Dilemma
+    [code] => NODUES
+    [score] => 100
+    [type] => 
+    [pgroup] => #19 CQM-9
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 1
+    [status] => Active
+    [languages] => C,C++,Java
+    [statement] => <strong>Problem Description :</strong>
+
+Its that dreaded time of the year again, when BIT-ians have to spend hours which even translate into days for a few unfortunate souls, waiting in queues to get their \'No-Dues\' application signed, just so that they can appear for the extremely pleasurable experience called the End Semester Exams. Much like a treasure hunt, students run from one room to the other, trying to get the different fields in the forms signed. There are a few offices in which more than one field is validated and the clerks at each office are kind enough to redirect you to your next destination. To make sure that the students have multiple ways of suffering to choose from, BIT now has more than one room for a few of the offices. Keep in mind that each queue moves at different speeds. Ultimately, once every field has been verified and signed, you have to bring the form to the Dean, Mr. Almighty for his signature.
+To simplify the matter, you and your friends prepared a map of the offices. Now provided the rate at which the queue in front of each of the offices(/rooms) moves (Rate = The number of people per day), your task is to calculate the number of students who will actually make it out of Mr. Almighty\'s Office (alive :P).
+
+<strong>Input Specification :</strong>
+<ul><li>There are multiple input sets, each of whose first line consists of two inputs n and e where n = the number of rooms (assuming that the students are initially in Room #1) and p = the total number of paths between the Rooms.</li><li>Next we have \'p\' input lines where we specify two room numbers and the rate at which the queue moves between them.</li><li>On the next line we specify the room number of the Dean\'s office.</li><li>Assume that there are infinite number of students and that all of them are initially in Room #1.</li><li>Read till End Of File.</li></ul>
+<strong>Output Specifications :</strong>
+
+For each test case, print out a single line the number of students who get out of the Dean\'s office in one day.
+
+<strong>Constraints :</strong>
+<ul><li>5 <= Number of Rooms <= 100</li><li>1 <= Room Numbers <= 100</li><li>1 <= Rate <= 1000</li></ul>
+
+<strong>Sample Input :</strong>
+
+<code>
+7 9
+1 2 100
+1 3 150
+2 4 75
+2 5 80
+3 4 75
+3 5 90
+4 7 65
+5 6 70
+6 7 85
+7
+</code>
+
+<strong>Sample Output :</strong>
+
+<code>
+135
+</code>
+
+<em>Question Setter : Vishnu Mohandas</em>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set name = 'No Dues Dilemma' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set code = 'NODUES' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set score = '100' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set type = '' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set pgroup = '#19 CQM-9' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set contest = 'practice' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set timelimit = '1' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set status = 'Active' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set languages = 'C,C++,Java' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set displayio = '1' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set maxfilesize = '50000' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:07:48]
+Query error:
+update problems set statement = '<strong>Problem Description :</strong>
+
+Its that dreaded time of the year again, when BIT-ians have to spend hours which even translate into days for a few unfortunate souls, waiting in queues to get their \'No-Dues\' application signed, just so that they can appear for the extremely pleasurable experience called the End Semester Exams. Much like a treasure hunt, students run from one room to the other, trying to get the different fields in the forms signed. There are a few offices in which more than one field is validated and the clerks at each office are kind enough to redirect you to your next destination. To make sure that the students have multiple ways of suffering to choose from, BIT now has more than one room for a few of the offices. Keep in mind that each queue moves at different speeds. Ultimately, once every field has been verified and signed, you have to bring the form to the Dean, Mr. Almighty for his signature.
+To simplify the matter, you and your friends prepared a map of the offices. Now provided the rate at which the queue in front of each of the offices(/rooms) moves (Rate = The number of people per day), your task is to calculate the number of students who will actually make it out of Mr. Almighty\'s Office (alive :P).
+
+<strong>Input Specification :</strong>
+<ul><li>There are multiple input sets, each of whose first line consists of two inputs n and e where n = the number of rooms (assuming that the students are initially in Room #1) and p = the total number of paths between the Rooms.</li><li>Next we have \'p\' input lines where we specify two room numbers and the rate at which the queue moves between them.</li><li>On the next line we specify the room number of the Dean\'s office.</li><li>Assume that there are infinite number of students and that all of them are initially in Room #1.</li><li>Read till End Of File.</li></ul>
+<strong>Output Specifications :</strong>
+
+For each test case, print out a single line the number of students who get out of the Dean\'s office in one day.
+
+<strong>Constraints :</strong>
+<ul><li>5 <= Number of Rooms <= 100</li><li>1 <= Room Numbers <= 100</li><li>1 <= Rate <= 1000</li></ul>
+
+<strong>Sample Input :</strong>
+
+<code>
+7 9
+1 2 100
+1 3 150
+2 4 75
+2 5 80
+3 4 75
+3 5 90
+4 7 65
+5 6 70
+6 7 85
+7
+</code>
+
+<strong>Sample Output :</strong>
+
+<code>
+135
+</code>
+
+<em>Question Setter : Vishnu Mohandas</em>' where pid=54
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+insert into logs value ('1370613046', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/FOREVERALONE
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 9
+    [name] => Forever Alone Level 140
+    [code] => FOREVERALONE
+    [score] => 100
+    [type] => Number Theory
+    [pgroup] => #11 CQM-1
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 1
+    [status] => Active
+    [languages] => C,C++,Java
+    [statement] => <b>Problem Statement : </b>
+
+<image /><div style=\"text-align:justify;\">As you all know, a dance party was organized for the unfortunate souls who had decided to join this cursed institution. Needless to say it was meant for those who were desperate enough to jump into a relationship less than a month into meeting someone of the opposite sex. The tickets were sold in pairs, wherein partners ended up with tickets with the same ID. The party is set to begin only after everyone who bought the ticket has entered the arena. Also, the organizers of the party need to make sure that there are only couples inside and they have resorted to you for help. The problem is that, the partners need not necessarily come in together. Given the total number of people inside, and their Ticket IDs, you need to find out the ID of the ticket the Forever Alone Guy used to make his way into the party.
+</div>
+
+<b>Input : </b>
+
+There are multiple input sets, and for each the first line referes to \'N\' - the total number of people of who came to party, followed by \'N\' lines that contain the Ticket IDs of the people who came to party. Assume that everyone who decided to waste their money turned up for the party.
+
+<b>Output : </b>
+
+The output for each test case consists of a single line that prints out the Ticket ID of the Forever Alone Guy. 
+
+<b>Constraints : </b>
+
+1 <= N <= 10^6 where N is always odd
+1 < Ticket IDs < 10^18
+Read till EOF.
+
+<b>Sample Input : </b>
+
+<code>
+	5
+	100
+	666
+	123
+	100
+	123
+	7
+	1001
+	2002
+	3003
+	1001
+	4004
+	3003
+	2002
+</code>
+
+<b>Sample Output : </b>
+
+<code>
+	Forever Alone Guy : 666
+	Forever Alone Guy : 4004
+</code>
+
+<i>Problem Setter : Vishnu Mohandas</i>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set name = 'Forever Alone Level 140' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set code = 'FOREVERALONE' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set score = '100' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set type = 'Number Theory' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set pgroup = '#11 CQM-1' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set contest = 'practice' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set timelimit = '1' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set status = 'Active' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set languages = 'C,C++,Java' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set displayio = '1' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set maxfilesize = '50000' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:20:46]
+Query error:
+update problems set statement = '<b>Problem Statement : </b>
+
+<image /><div style=\"text-align:justify;\">As you all know, a dance party was organized for the unfortunate souls who had decided to join this cursed institution. Needless to say it was meant for those who were desperate enough to jump into a relationship less than a month into meeting someone of the opposite sex. The tickets were sold in pairs, wherein partners ended up with tickets with the same ID. The party is set to begin only after everyone who bought the ticket has entered the arena. Also, the organizers of the party need to make sure that there are only couples inside and they have resorted to you for help. The problem is that, the partners need not necessarily come in together. Given the total number of people inside, and their Ticket IDs, you need to find out the ID of the ticket the Forever Alone Guy used to make his way into the party.
+</div>
+
+<b>Input : </b>
+
+There are multiple input sets, and for each the first line referes to \'N\' - the total number of people of who came to party, followed by \'N\' lines that contain the Ticket IDs of the people who came to party. Assume that everyone who decided to waste their money turned up for the party.
+
+<b>Output : </b>
+
+The output for each test case consists of a single line that prints out the Ticket ID of the Forever Alone Guy. 
+
+<b>Constraints : </b>
+
+1 <= N <= 10^6 where N is always odd
+1 < Ticket IDs < 10^18
+Read till EOF.
+
+<b>Sample Input : </b>
+
+<code>
+	5
+	100
+	666
+	123
+	100
+	123
+	7
+	1001
+	2002
+	3003
+	1001
+	4004
+	3003
+	2002
+</code>
+
+<b>Sample Output : </b>
+
+<code>
+	Forever Alone Guy : 666
+	Forever Alone Guy : 4004
+</code>
+
+<i>Problem Setter : Vishnu Mohandas</i>' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+insert into logs value ('1370613125', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/FOREVERALONE
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 9
+    [name] => Forever Alone Level 140
+    [code] => FOREVERALONE
+    [score] => 100
+    [type] => Number Theory
+    [pgroup] => #11 CQM-1
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 1
+    [status] => Active
+    [languages] => C,C++,Java
+    [statement] => <b>Problem Statement : </b>
+
+<div style=\"text-align:justify;\">As you all know, a dance party was organized for the unfortunate souls who had decided to join this cursed institution. Needless to say it was meant for those who were desperate enough to jump into a relationship less than a month into meeting someone of the opposite sex. The tickets were sold in pairs, wherein partners ended up with tickets with the same ID. The party is set to begin only after everyone who bought the ticket has entered the arena. Also, the organizers of the party need to make sure that there are only couples inside and they have resorted to you for help. The problem is that, the partners need not necessarily come in together. Given the total number of people inside, and their Ticket IDs, you need to find out the ID of the ticket the Forever Alone Guy used to make his way into the party.
+</div>
+
+<b>Input : </b>
+
+There are multiple input sets, and for each the first line referes to \'N\' - the total number of people of who came to party, followed by \'N\' lines that contain the Ticket IDs of the people who came to party. Assume that everyone who decided to waste their money turned up for the party.
+
+<b>Output : </b>
+
+The output for each test case consists of a single line that prints out the Ticket ID of the Forever Alone Guy. 
+
+<b>Constraints : </b>
+
+1 <= N <= 10^6 where N is always odd
+1 < Ticket IDs < 10^18
+Read till EOF.
+
+<b>Sample Input : </b>
+
+<code>
+	5
+	100
+	666
+	123
+	100
+	123
+	7
+	1001
+	2002
+	3003
+	1001
+	4004
+	3003
+	2002
+</code>
+
+<b>Sample Output : </b>
+
+<code>
+	Forever Alone Guy : 666
+	Forever Alone Guy : 4004
+</code>
+
+<i>Problem Setter : Vishnu Mohandas</i>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set name = 'Forever Alone Level 140' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set code = 'FOREVERALONE' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set score = '100' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set type = 'Number Theory' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set pgroup = '#11 CQM-1' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set contest = 'practice' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set timelimit = '1' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set status = 'Active' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set languages = 'C,C++,Java' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set displayio = '1' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set maxfilesize = '50000' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:22:05]
+Query error:
+update problems set statement = '<b>Problem Statement : </b>
+
+<div style=\"text-align:justify;\">As you all know, a dance party was organized for the unfortunate souls who had decided to join this cursed institution. Needless to say it was meant for those who were desperate enough to jump into a relationship less than a month into meeting someone of the opposite sex. The tickets were sold in pairs, wherein partners ended up with tickets with the same ID. The party is set to begin only after everyone who bought the ticket has entered the arena. Also, the organizers of the party need to make sure that there are only couples inside and they have resorted to you for help. The problem is that, the partners need not necessarily come in together. Given the total number of people inside, and their Ticket IDs, you need to find out the ID of the ticket the Forever Alone Guy used to make his way into the party.
+</div>
+
+<b>Input : </b>
+
+There are multiple input sets, and for each the first line referes to \'N\' - the total number of people of who came to party, followed by \'N\' lines that contain the Ticket IDs of the people who came to party. Assume that everyone who decided to waste their money turned up for the party.
+
+<b>Output : </b>
+
+The output for each test case consists of a single line that prints out the Ticket ID of the Forever Alone Guy. 
+
+<b>Constraints : </b>
+
+1 <= N <= 10^6 where N is always odd
+1 < Ticket IDs < 10^18
+Read till EOF.
+
+<b>Sample Input : </b>
+
+<code>
+	5
+	100
+	666
+	123
+	100
+	123
+	7
+	1001
+	2002
+	3003
+	1001
+	4004
+	3003
+	2002
+</code>
+
+<b>Sample Output : </b>
+
+<code>
+	Forever Alone Guy : 666
+	Forever Alone Guy : 4004
+</code>
+
+<i>Problem Setter : Vishnu Mohandas</i>' where pid=9
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+insert into logs value ('1370614873', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/SLVXY
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 60
+    [name] => SolveXY
+    [code] => SLVXY
+    [score] => 100
+    [type] => Number Theory
+    [pgroup] => DEV-CQM
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 6
+    [status] => Active
+    [languages] => C#,JavaScript,Pascal,Perl,PHP,Python,Ruby
+    [statement] => <b>Problem Statement</b>
+Given a positive integer K, find the number of distinct positive integer solutions of the following equation.<br/>
+<image />
+<img src=\"/acm/photos/image_solvexy.png\" id=\"leena\">
+<br/>
+<b>Input Specifications</b>
+The first line of input contains T, the number of test cases.
+Each test case consists of a positive integer K in a separate line.
+
+<b>Output Specifications</b>
+For each test case, print the answer followed by a new line.
+
+<b>Constraints</b>
+<ul><li>1 <= T <= 1000</li>
+<li>1 <= K <= 10000</li></ul>
+
+<b>Sample Input</b>
+<code>
+3
+1
+2
+3
+</code>
+
+<b>Sample Output</b>
+<code>
+1
+3
+9
+</code>
+
+<b>Explanation:</b>
+Case #1: The only possible solution is (2, 2)
+Case #2: The possible solutions are  (4, 4), (3, 6) and (6, 3)
+
+<i>Problem Setter: Rohan Laishram</i>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set name = 'SolveXY' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set code = 'SLVXY' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set score = '100' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set type = 'Number Theory' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set pgroup = 'DEV-CQM' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set contest = 'practice' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set timelimit = '6' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set status = 'Active' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set languages = 'C#,JavaScript,Pascal,Perl,PHP,Python,Ruby' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set displayio = '1' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set maxfilesize = '50000' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:13]
+Query error:
+update problems set statement = '<b>Problem Statement</b>
+Given a positive integer K, find the number of distinct positive integer solutions of the following equation.<br/>
+<image />
+<img src=\"/acm/photos/image_solvexy.png\" id=\"leena\">
+<br/>
+<b>Input Specifications</b>
+The first line of input contains T, the number of test cases.
+Each test case consists of a positive integer K in a separate line.
+
+<b>Output Specifications</b>
+For each test case, print the answer followed by a new line.
+
+<b>Constraints</b>
+<ul><li>1 <= T <= 1000</li>
+<li>1 <= K <= 10000</li></ul>
+
+<b>Sample Input</b>
+<code>
+3
+1
+2
+3
+</code>
+
+<b>Sample Output</b>
+<code>
+1
+3
+9
+</code>
+
+<b>Explanation:</b>
+Case #1: The only possible solution is (2, 2)
+Case #2: The possible solutions are  (4, 4), (3, 6) and (6, 3)
+
+<i>Problem Setter: Rohan Laishram</i>' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:39]
+Query error:
+insert into logs value ('1370614899', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/SLVXY
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 60
+    [name] => SolveXY
+    [code] => SLVXY
+    [score] => 100
+    [type] => Number Theory
+    [pgroup] => DEV-CQM
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 6
+    [status] => Active
+    [languages] => C#,JavaScript,Pascal,Perl,PHP,Python,Ruby
+    [statement] => <b>Problem Statement</b>
+Given a positive integer K, find the number of distinct positive integer solutions of the following equation.<br/>
+<image />
+<!--img src=\"/acm/photos/image_solvexy.png\" id=\"leena\"-->
+<br/>
+<b>Input Specifications</b>
+The first line of input contains T, the number of test cases.
+Each test case consists of a positive integer K in a separate line.
+
+<b>Output Specifications</b>
+For each test case, print the answer followed by a new line.
+
+<b>Constraints</b>
+<ul><li>1 <= T <= 1000</li>
+<li>1 <= K <= 10000</li></ul>
+
+<b>Sample Input</b>
+<code>
+3
+1
+2
+3
+</code>
+
+<b>Sample Output</b>
+<code>
+1
+3
+9
+</code>
+
+<b>Explanation:</b>
+Case #1: The only possible solution is (2, 2)
+Case #2: The possible solutions are  (4, 4), (3, 6) and (6, 3)
+
+<i>Problem Setter: Rohan Laishram</i>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:39]
+Query error:
+update problems set name = 'SolveXY' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:39]
+Query error:
+update problems set code = 'SLVXY' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:39]
+Query error:
+update problems set score = '100' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set type = 'Number Theory' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set pgroup = 'DEV-CQM' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set contest = 'practice' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set timelimit = '6' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set status = 'Active' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set languages = 'C#,JavaScript,Pascal,Perl,PHP,Python,Ruby' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set displayio = '1' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set maxfilesize = '50000' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 19:51:40]
+Query error:
+update problems set statement = '<b>Problem Statement</b>
+Given a positive integer K, find the number of distinct positive integer solutions of the following equation.<br/>
+<image />
+<!--img src=\"/acm/photos/image_solvexy.png\" id=\"leena\"-->
+<br/>
+<b>Input Specifications</b>
+The first line of input contains T, the number of test cases.
+Each test case consists of a positive integer K in a separate line.
+
+<b>Output Specifications</b>
+For each test case, print the answer followed by a new line.
+
+<b>Constraints</b>
+<ul><li>1 <= T <= 1000</li>
+<li>1 <= K <= 10000</li></ul>
+
+<b>Sample Input</b>
+<code>
+3
+1
+2
+3
+</code>
+
+<b>Sample Output</b>
+<code>
+1
+3
+9
+</code>
+
+<b>Explanation:</b>
+Case #1: The only possible solution is (2, 2)
+Case #2: The possible solutions are  (4, 4), (3, 6) and (6, 3)
+
+<i>Problem Setter: Rohan Laishram</i>' where pid=60
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:34:12]
+Query error:
+insert into logs value ('1370617452', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminjudge
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [notice] => Aurora Online Judge
+Welcome to Aurora Online Judge
+Please go through FAQ section to know about the changes made to Aurora
+
+ACM Updates
+Last year\'s teams has been flushed. You have to re-register.
+Many practice problems has been added and Judge will be running 24/7. Solve as many as you can to get used to new interface before CQM starts.
+    [judgenotice] => Update Notice
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:34:12]
+Query error:
+update admin set value='Aurora Online Judge
+Welcome to Aurora Online Judge
+Please go through FAQ section to know about the changes made to Aurora
+
+ACM Updates
+Last year\'s teams has been flushed. You have to re-register.
+Many practice problems has been added and Judge will be running 24/7. Solve as many as you can to get used to new interface before CQM starts.' where variable='notice'
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+insert into logs value ('1370617700', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminproblem/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 1
+    [name] => Squares
+    [code] => TEST
+    [score] => 0
+    [type] => Ad-Hoc
+    [pgroup] => Test
+    [contest] => practice
+    [maxfilesize] => 50000
+    [displayio] => 1
+    [timelimit] => 1
+    [status] => Active
+    [languages] => C,C++,C#,Java,JavaScript,Pascal,Perl,PHP,Python,Ruby,Text
+    [statement] => WAP to output the square of an integer.
+Input : Read until the end of file. Each line contains a single positive integer less than or equal to 10.
+Output : Output the square of the integer, one in each line.
+
+<b>SAMPLE INPUT</b>
+
+<code>
+1
+2
+3
+5
+</code>
+
+<b>SAMPLE OUTPUT </b>
+
+<code>
+1
+4
+9
+25
+</code>
+    [updateproblem] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set name = 'Squares' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set code = 'TEST' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set score = '0' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set type = 'Ad-Hoc' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set pgroup = 'Test' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set contest = 'practice' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set timelimit = '1' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set status = 'Active' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set languages = 'C,C++,C#,Java,JavaScript,Pascal,Perl,PHP,Python,Ruby,Text' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set displayio = '1' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set maxfilesize = '50000' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-06-07 20:38:20]
+Query error:
+update problems set statement = 'WAP to output the square of an integer.
+Input : Read until the end of file. Each line contains a single positive integer less than or equal to 10.
+Output : Output the square of the integer, one in each line.
+
+<b>SAMPLE INPUT</b>
+
+<code>
+1
+2
+3
+5
+</code>
+
+<b>SAMPLE OUTPUT </b>
+
+<code>
+1
+4
+9
+25
+</code>' where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================

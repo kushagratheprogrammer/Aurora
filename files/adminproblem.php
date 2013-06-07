@@ -60,7 +60,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == 'Admin') {
                         <div class='controls'>
                             <select name='contest' id='contest'>
                                 <option value='contest' <?php if ($res['contest'] == "contest") echo "selected='selected'"; ?> >Contest</option>
-                                <option value='practice'<?php if ($res['contest'] == "practice") echo "selected='selected'"; ?>>Practice</option>
+                                <option value='practice' <?php if ($res['contest'] == "practice") echo "selected='selected'"; ?>>Practice</option>
                             </select>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == 'Admin') {
                         <div class='controls'>
                             <select name='displayio' id='displayio'>
                                 <option value='1' <?php if ($res['displayio'] == '1') echo "selected='selected'"; ?>>Yes</option>
-                                <option value='0' <?php if ($res['dipslayio'] == '0') echo "selected='selected'"; ?>>No</option>
+                                <option value='0' <?php if ($res['displayio'] == '0') echo "selected='selected'"; ?>>No</option>
                             </select>
                         </div>
                     </div>
