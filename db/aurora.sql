@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `problems` (
   `status` tinytext,
   `pgroup` tinytext,
   `statement` longtext,
-  `image` blob,
+  `image` longblob,
   `imgext` tinytext,
   `input` longtext,
   `output` longtext,
