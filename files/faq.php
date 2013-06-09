@@ -8,11 +8,11 @@
 <table class='faq'><tr class="info"><th>What are the changes in this version?</th></tr><tr><td>
 	<p>There are following changes :</p>
         <ol>
-            <li>There are two sections of problems now Practice Problems and Contest Problems. One can make submissions to practice problems when there is no contest live, i.e. judge is in Passive mode. 
+            <li>There are two sections of problems now, Practice Problems and Contest Problems. One can make submissions to practice problems when there is no contest live, i.e. judge is in Passive mode. 
                 Contest problems excepts submissions only when judge is Active mode.</li>
             <li>Two type of problems are there now, 'Active' and 'Inactive', both will be visible to users but submissions can be made to only 'Active' Problems.</li>
             <li>Ranking is done only on Contest Problems only. Although there is score on each Practice Problem but its score is calculated separately.</li>
-            <li>There is a team page for each team. One can see which practice problems you / your team-mates solved, and problems that are yet to solved.</li>
+            <li>There is a team page for each team. One can see which practice problems you / your team-mates solved, and problems that are yet to be solved.</li>
             <li>Each contest has its own main page where problems will appear when contest starts also it will contain various Announcements/Notifications related to the contest.</li>
             <li>Judge now runs in a sandbox environment on DC Hub server rather than on virtual machine enabling it to run 24/7, also sockets are used to further improve the performance of judge.</li>
             <li>Some changes to judge and web interface made it possible to set fractional time limit like 0.5 second</li>
@@ -22,13 +22,11 @@
 	<p>Your programs will be running on following configurations.</p>
 </td></tr></table><br/>
 <table class='faq'><tr class="info"><th>What are the limitations of this version?</th></tr><tr><td>
-	<p>The new structure of judge to run with fractional time limit flushes the stderr file and thus runtime errors cannot be saved.
-             But we can check the value that the program returned and that enables us to guess the type of error occurred. Like 0 is for successful execution, 35584 for SIGSEV, 31744 is for SIGKILL etc.<br/>
-             Also Java programmers need to define their main function inside Main class (like other online judges) or they will get compilation error.
+	<p>Java programmers need to define their main function inside class named 'Main' (like other online judges) or they will get compilation error.
         </p>
 </td></tr></table><br/>
 <table class='faq'><tr class="info"><th>I liked few features of old judge which are now missing.</th></tr><tr><td>
-	<p>Post description the features you liked on Contact Us page and I will try and add them as soon as I can.</p>
+	<p>Post description of features you liked on Contact Us page and I will try and add them as soon as I can.</p>
 </td></tr></table><br/>
 <hr/>
 <center><h3>Aurora</h3></center>

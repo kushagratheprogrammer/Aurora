@@ -1,12 +1,12 @@
 import MySQLdb as sql
-import platform,re, os, shutil, sys, thread, time, urllib, SocketServer
+import platform,re, os, shutil, sys, thread, time, urllib, SocketServer, subprocess
 
 # Ubuntu 10.10
 # sudo apt-get update
 # sudo apt-get install bf g++ fpc mono-gmcs openjdk-6-jdk perl php5 python python-mysqldb rhino ruby
 
 if "-judge" not in sys.argv:
-	print "\nAthena Online Judge : Execution Protocol (Linux Version 1.0)";
+	print "\nArgus Online Judge : Execution Protocol (Linux Version 1.0)";
 	print "\nCommand Line Options :"
 	print "    -judge    : Connect to the server and start judging submissions."
 	print "    -unsafe   : Do not skip unsafe programs whose execution may compromise this system."
@@ -89,24 +89,26 @@ def create(codefilename,language):
 # Program Execution
 def execute(exename,language, timelimit):
 	global running, timediff
+	inputfile = " <env/input.txt"
+	if language == "Brain" : cmd = "timeout "+str(timelimit)+" bf env/"+exename+".b"+inputfile
+	elif language=="C": cmd = "timeout "+str(timelimit)+" env/"+exename+inputfile
+	elif language=="C++": cmd = "timeout "+str(timelimit)+" env/"+exename+inputfile
+	elif language=="C#": cmd = "timeout "+str(timelimit)+" mono env/"+exename+".exe"+inputfile
+	elif language=="Java": cmd = "timeout "+str(timelimit)+" java -client -classpath env "+exename+inputfile
+	elif language=="JavaScript": cmd = "timeout "+str(timelimit)+" rhino -f env/"+exename+".js"+inputfile
+	elif language=="Pascal": cmd = "timeout "+str(timelimit)+" env/"+exename+inputfile
+	elif language=="Perl": cmd = "timeout "+str(timelimit)+" perl env/"+exename+".pl"+inputfile
+	elif language=="PHP": cmd = "timeout "+str(timelimit)+" php -f env/"+exename+".php"+inputfile
+	elif language=="Python": cmd = "timeout "+str(timelimit)+" python env/"+exename+".py"+inputfile
+	elif language=="Ruby": cmd = "timeout "+str(timelimit)+" ruby env/"+exename+".rb"+inputfile
 	starttime = time.time()
-	#running = 1;
-	if language=="Brain": t = os.system("timeout "+str(timelimit)+" bf env/"+exename+".b"+ioeredirect);
-	elif language=="C": t = os.system("timeout "+str(timelimit)+" env/"+exename+ioeredirect);
-	elif language=="C++": t = os.system("timeout "+str(timelimit)+" env/"+exename+ioeredirect);
-	elif language=="C#": t = os.system("timeout "+str(timelimit)+" mono env/"+exename+".exe"+ioeredirect);
-	elif language=="Java": t = os.system("timeout "+str(timelimit)+" java -client -classpath env "+exename+ioeredirect);
-	elif language=="JavaScript": t = os.system("timeout "+str(timelimit)+" rhino -f env/"+exename+".js"+ioeredirect);
-	elif language=="Pascal": t = os.system("timeout "+str(timelimit)+" env/"+exename+ioeredirect);
-	elif language=="Perl": t = os.system("timeout "+str(timelimit)+" perl env/"+exename+".pl"+ioeredirect);
-	elif language=="PHP": t = os.system("timeout "+str(timelimit)+" php -f env/"+exename+".php"+ioeredirect);
-	elif language=="Python": t = os.system("timeout "+str(timelimit)+" python env/"+exename+".py"+ioeredirect);
-	elif language=="Ruby": t = os.system("timeout "+str(timelimit)+" ruby env/"+exename+".rb"+ioeredirect);
-        #running = 0
+	p = subprocess.Popen([cmd], shell=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	(stdout, stderr)= p.communicate()
 	endtime = time.time()
-	timediff = endtime-starttime
-	print t
-	if t != 0: file_write('env/error.txt', "Program returned : "+str(t));
+	timediff = endtime - starttime
+	file_write('env/output.txt', stdout);
+	file_write('env/error.txt', stderr);
+	t = p.returncode
 	return t
 
 # Perform system checks
@@ -116,7 +118,7 @@ if(platform.system()!='Linux'):
 
 # Print Heading
 os.system("clear")
-print "\nAthena Online Judge : Execution Protocol\n";
+print "\nArgus Online Judge : Execution Protocol\n";
 
 # Obtain lock
 if(os.path.exists("lock.txt")):
@@ -223,11 +225,11 @@ def runjudge(runid):
                         t = execute(codefilename,run["language"], run['timelimit'])
                         #while running==0: pass # Wait till process begins
                         print "Process Complete!"
-                        if t == 31744:
+                        if t == 124:
                                 result = "TLE"
                                 timetaken = run["timelimit"]
                                 #kill(codefilename,run["language"])
-                                print "Time Limit Exceeded - Process killed."
+                                file_write('env/error.txt', "Time Limit Exceeded - Process killed.")
                         else:
                                 timetaken = timediff
 			

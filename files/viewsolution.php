@@ -65,9 +65,9 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 </table>
                 <?php
             }
-            echo "<div class='limit'><pre class='brush: " . $brush[$res['language']] . "'>" . htmlspecialchars($res[code]) . "</pre></div>";
+            echo "<h4>Code</h4><div class='limit'><pre class='brush: " . $brush[$res['language']] . "'>" . htmlspecialchars($res[code]) . "</pre></div>";
             if (strlen($res['error']) != 0) {
-                echo "<div class='limit'><pre class='brush: text'>$res[error]</pre></div>";
+                echo "<h4>Error</h4><div class='limit'><pre class='brush: text'>$res[error]</pre></div>";
             }
             if (($prob['displayio'] == 1 && ($res['result'] == 'AC' || $res['result'] == 'WA' || $res['result'] == 'PE')) || (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == 'Admin' && strlen($prob['input']) <= 102400)) {
                 ?>
