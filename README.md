@@ -11,31 +11,7 @@ Setup Judge Python Script
 Python script for judge can be found in judge folder. To protect rest of the machine from potenial treat it is recommended to run the judge in a sandboxed environment to trap it inside a folder or run it on a virtual machine. Both processes are described below.
 
 ### How to Setup Sandbox Environment
-Judge is tarped inside an area in machine by using chroot command in linux. But first one needs to set up necessary os files on which the judge will run. Since this was tested on ubuntu 12.04, following commands are specific to this version of linux. But similar commands can be used on other linux distributions.
-
-1. Fetch os files <code>sudo debootstrap --variant=buildd --arch i386 precise /path/to/chroot/directory/ http://archive.ubuntu.com/ubuntu</code>. This is one time process and will fetch and install ubuntu precise x86 version in /path/to/chroot/directory/.
-2. Bind process in chroot directory to the host OS. This is necessary for Java and Javascirpt interpreter and needs to be done each time the host OS is booted. <code>sudo mount -o bind /proc /path/to/chroot/directory/proc</code>
-3. Change to chroot directory <code>sudo chroot /path/to/chroot/directory</code>.
-4. Install required compliers/interpreters (one time process).
-<code>
-sudo apt-get update
-</code>
-<code>
-sudo apt-get install bf g++ fpc mono-gmcs openjdk-6-jdk perl php5 python python-mysqldb rhino ruby
-</code>
-5. Edit <code>sql_hostname, sql_hostport, sql_username, sql_password, sql_database, HOST, PORT</code> appropriately. Run the python script in background.
-<code>
-python judge.py -judge -unsafe -cache &
-</code>
-	* <code>-judge</code> option turn on the judgement. Without this judgement will not begin only short description of options available will be shown
-	* <code>-unsafe</code> option set the judgement for all languages (some which can used to perform suspicious operations)
-	* <code>-cache</code> option tells the judge to cache input and correct output first time the solution for a problem is submitted and later use this cache rather than fetching data from database each time.
-6. Exit chroot by simply using <code>exit</code>.
-
-**Note :** 
-* To bring judge to foreground use <code>fg (jobnumber)</code>. 
-* To enquire about the job number use <code>jobs</code>.
-* To shutdown judge simply bring it to foreground and send keyboard interupt i.e, CTRL+C
+In this method Judge is tarped inside an area in machine by using chroot command in linux and detailed steps for seting up judge can be found in 'set up judge' file inside judge folder.
 
 ### How to Setup Judge in Virtual Machine 
 
@@ -47,6 +23,11 @@ Follow following steps.
 sudo apt-get update
 sudo apt-get install bf g++ fpc mono-gmcs openjdk-6-jdk perl php5 python python-mysqldb rhino ruby
 </code>
+** Note **
+You may need to add following two lines in '/etc/apt/sources.list' file
+deb http://in.archive.ubuntu.com/ubuntu/ precise main universe 
+deb-src http://in.archive.ubuntu.com/ubuntu/ precise main universe
+
 3. Edit <code>sql_hostname, sql_hostport, sql_username, sql_password, sql_database, HOST, PORT</code> appropriately. Run the python script.
 <code>
 python judge.py -judge -unsafe -cache
