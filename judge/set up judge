@@ -56,3 +56,8 @@ $ python judge.py -judge -unsafe -cache &
 * To bring judge to foreground use 'fg (jobnumber)'. 
 * To enquire about the job number use 'jobs'.
 * To shutdown judge simply bring it to foreground and send keyboard interupt i.e, CTRL+C
+
+--- perl config ---
+
+$ locale-gen en_US en_US.UTF-8 hu_HU hu_HU.UTF-8
+$ dpkg-reconfigure locales

@@ -18,9 +18,9 @@ timeoffset = 0
 # Initialize Database and judge Constants
 sql_hostname = '127.0.0.1'
 sql_hostport = 3306
-sql_username = 'aurora';
-sql_password = 'aurora'
-sql_database = 'aurora_install'
+sql_username = ''
+sql_password = ''
+sql_database = ''
 HOST, PORT = "127.0.0.1", 8723
 #timeoffset = 19800
 
@@ -305,15 +305,19 @@ class MyTCPHandler(SocketServer.StreamRequestHandler):
 
 
 if __name__ == "__main__":
-
+	sql_username = raw_input("SQL Username : ")
+	sql_password = raw_input("SQL Password : ")
+	sql_database = raw_input("SQL Database : ")
     # Create the server, binding to localhost on port 8723
         server = SocketServer.TCPServer((HOST, PORT), MyTCPHandler)
 
     # Activate the server; this will keep running until you
     # interrupt the program with Ctrl-C
-        print ("Starting Server ... ")
+	os.system('clear')
+        print "Supported Languages : " + str(languages) + '\n'
+	print ("Waiting for submissions... ")
         try:
-            server.serve_forever()
+		server.serve_forever()
         except KeyboardInterrupt, e:
                 print " Keyboard Interrupt Detected.\n"
         except Exception, e:
