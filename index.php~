@@ -134,7 +134,7 @@ if ($judge['value'] == 'Lockdown' && isset($_SESSION['loggedin']) && $_SESSION['
                 </div>
             </div>
             <div class="footer">
-                Created by - Kaustubh Karkare<br/>
+                Created by - Kaustub Karkare<br/>
                 Upgraded by - Pushkar Anand
             </div>
         </div>
