@@ -77,7 +77,7 @@ def create(codefilename,language):
 		if not os.path.exists("env/"+codefilename+".exe"): result="CE"
 	elif language=="Java":
 		os.system("javac -g:none -Xlint -d env env/"+codefilename+".java"+ioeredirect);
-		if not os.path.exists("env/"+codefilename+".class"): result="CE"
+		if ((not os.path.exists("env/"+codefilename+".class")) and (not os.path.exists("env/main/"+codefilename+".class"))): result="CE"
 	elif language=="Pascal":
 		#os.system("gpc env/"+codefilename+".pas -O -march=pentiumpro -fno-asm -Wall -lm -static -dONLINE_JUDGE -o env/"+codefilename+ioeredirect);
 		os.system("fpc env/"+codefilename+".pas -oenv/"+codefilename+ioeredirect);
@@ -94,7 +94,11 @@ def execute(exename,language, timelimit):
 	elif language=="C": cmd = "timeout "+str(timelimit)+" env/"+exename+inputfile
 	elif language=="C++": cmd = "timeout "+str(timelimit)+" env/"+exename+inputfile
 	elif language=="C#": cmd = "timeout "+str(timelimit)+" mono env/"+exename+".exe"+inputfile
-	elif language=="Java": cmd = "timeout "+str(timelimit)+" java -client -classpath env "+exename+inputfile
+	elif language=="Java":
+		if(os.path.exists("env/"+exename+".class")): 
+			cmd = "timeout "+str(timelimit)+" java -client -classpath env "+exename+inputfile
+		else:
+			cmd = "timeout "+str(timelimit)+" java -client -classpath env main/"+exename+inputfile
 	elif language=="JavaScript": cmd = "timeout "+str(timelimit)+" rhino -f env/"+exename+".js"+inputfile
 	elif language=="Pascal": cmd = "timeout "+str(timelimit)+" env/"+exename+inputfile
 	elif language=="Perl": cmd = "timeout "+str(timelimit)+" perl env/"+exename+".pl"+inputfile
@@ -160,10 +164,7 @@ def runjudge(runid):
                 #for f in os.listdir("env"):
                 #        if re.search("\["+str(runid)+"\]", f):
                 #                os.unlink("env/"+f)
-                while len(os.listdir("env"))>0:
-                        try:
-                                for file in os.listdir("env"): os.unlink("env/"+file);
-                        except:	pass
+                os.system("rm -r env/*");
                 print "Cleared Environment for Program Execution." ;
                 
                 # Initialize Variables
@@ -181,7 +182,7 @@ def runjudge(runid):
                         for line in code:
                                 newcode+=re.sub(r"//(.*)$","",line)+"\n"
                         run["code"]=newcode
-		
+
                 # Check for malicious codes in Python
                 if False and result==None and run["language"]=="Python" and (
                         re.match(r"import os",run["code"]) or
@@ -189,7 +190,7 @@ def runjudge(runid):
                         print "Suspicious Code."
                         file_write("env/error.txt","Error : Suspicious code.");
                         result = "SC"; timetaken = 0
-		
+
                 # Write Code & Input File
                 if result==None:
                         if run["language"]=="Java": codefilename = run["name"]
@@ -209,15 +210,15 @@ def runjudge(runid):
                                         file_write("io_cache/Aurora Online Judge - Problem ID "+str(run["pid"])+" - Output.txt", filecreate['output'])
                                 shutil.copyfile("io_cache/Aurora Online Judge - Problem ID "+str(run["pid"])+" - Input.txt","env/input.txt")
                         print "Code & Input File Created."
-		
+
 		# Compile, if required
                 if result==None:
                         result = create(codefilename,run["language"]); # Compile
-		
+
 		# Increase Time Limit in case of JavaScript & PHP
                 if run["language"] in ('JavaScript','PHP'):
                         run["timelimit"]+=1
-		
+
 		# Run the program through a new thread, and kill it after some time
                 if result==None and run["language"]!="Text":
                         running = 0
@@ -232,7 +233,7 @@ def runjudge(runid):
                                 file_write('env/error.txt', "Time Limit Exceeded - Process killed.")
                         else:
                                 timetaken = timediff
-			
+
                 # Compare the output
                 output = ""
                 if result==None and run["language"]!="Text" and file_read("env/error.txt")!="":
@@ -251,7 +252,7 @@ def runjudge(runid):
                         elif(re.sub(r"\s","",output)==re.sub(r"\s","",correct)): result = "AC" if "P" in run["output"] else "PE"
                         else: result = "WA"
                 print "Output Judgement Complete."
-		
+
 		# Write results to database
                 error = file_read("env/error.txt")
                 if result=="AC": output = ""
@@ -259,7 +260,7 @@ def runjudge(runid):
                 cursor.execute("UPDATE runs SET time='%.3f',result='%s',error='%s',output='%s' WHERE rid=%d" % (float(timetaken),result,re.escape(error),re.escape(output),int(run["rid"])));
                 #link.commit();
                 print "Result (%s,%.3f) updated on Server.\n" % (result,timetaken)
-		
+
                 # Update admin.lastjudge time on server
                 cursor.execute("SELECT * FROM admin WHERE variable='lastjudge'");
                 #print "cur : "+ str(cursor.rowcount) + " " + str(int(time.time())+timeoffset)
@@ -273,6 +274,7 @@ def runjudge(runid):
                 try: link.close();
                 except: pass
                 print "Disconnected from Server.\n"
+		sys.stdout.flush();
         except sql.Error, e:
             print "MySQL Error %d : %s\n" % (e.args[0],e.args[1])
 

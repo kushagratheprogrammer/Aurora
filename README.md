@@ -74,7 +74,7 @@ Administration
 Acknowledgements
 ----------------
 
-* Kaustub Karkare, creator of Aurora Online Judge from which this version was derived.
+* Kaustubh Karkare, creator of Aurora Online Judge from which this version was derived.
 * Siddhartha Sahu, created functions.php which is extensively used for database interaction.
 
 License

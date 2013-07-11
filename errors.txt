@@ -681,3 +681,550 @@ update runs set result = NULL, time = NULL where pid=1
 Error: SQLSTATE[HY000]: General error
 /host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
 ======================================================================
+[2013-07-02 13:33:40]
+Query error:
+
+Error: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:45:58]
+Query error:
+insert into logs value ('1372752958', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:47:08]
+Query error:
+insert into logs value ('1372753028', '127.0.0.1', 'Array
+(
+    [url] => /aurora/submit/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [lang] => C++
+    [sub] => #include <stdio.h>
+int main(){
+  	int n;
+  	while(scanf(\"%d\", &n) != EOF){
+    	printf(\"%d\\n\", n*n);
+  	}
+	return 0;
+}
+    [probcode] => TEST
+    [submitcode] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:47:08]
+Query error:
+INSERT INTO runs (pid,tid,language,name,code,access,submittime) VALUES ('1', '1', 'C++', 'Main', '#include <stdio.h>
+int main(){
+  	int n;
+  	while(scanf(\"%d\", &n) != EOF){
+    	printf(\"%d\\n\", n*n);
+  	}
+	return 0;
+}', 'private', '1372753028')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:50:40]
+Query error:
+insert into logs value ('1372753240', '127.0.0.1', 'Array
+(
+    [url] => /aurora/submit/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [lang] => Text
+    [sub] => 1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+    [probcode] => TEST
+    [submitcode] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:50:40]
+Query error:
+INSERT INTO runs (pid,tid,language,name,code,access,submittime) VALUES ('1', '1', 'Text', 'Main', '1
+4
+9
+16
+25
+36
+49
+64
+81
+100', 'private', '1372753240')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:50:51]
+Query error:
+insert into logs value ('1372753251', '127.0.0.1', 'Array
+(
+    [url] => /aurora/viewsolution/415
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [rid] => 415
+    [rejudge] => Rejudge
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:50:51]
+Query error:
+update runs set result = NULL, time = NULL where rid = 415
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:51:28]
+Query error:
+insert into logs value ('1372753288', '127.0.0.1', 'Array
+(
+    [url] => /aurora/submit/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [lang] => Text
+    [sub] => 1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+    [probcode] => TEST
+    [submitcode] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-02 13:51:28]
+Query error:
+INSERT INTO runs (pid,tid,language,name,code,access,submittime) VALUES ('1', '1', 'Text', 'Main', '1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+', 'private', '1372753288')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 13:42:00]
+Query error:
+insert into logs value ('1372839120', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 13:43:23]
+Query error:
+insert into logs value ('1372839203', '127.0.0.1', 'Array
+(
+    [url] => /aurora/submit/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [lang] => C++
+    [sub] => #include <cstdio>
+using namespace std;
+int main(){
+  int n;
+  while(scanf(\"%d\", &n) != EOF){
+    printf(\"%d\\n\", n*n);
+  }
+  return 0;
+}
+    [probcode] => TEST
+    [submitcode] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 13:43:23]
+Query error:
+INSERT INTO runs (pid,tid,language,name,code,access,submittime) VALUES ('1', '1', 'C++', 'Main', '#include <cstdio>
+using namespace std;
+int main(){
+  int n;
+  while(scanf(\"%d\", &n) != EOF){
+    printf(\"%d\\n\", n*n);
+  }
+  return 0;
+}', 'private', '1372839203')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 13:43:40]
+Query error:
+insert into logs value ('1372839220', '127.0.0.1', 'Array
+(
+    [url] => /aurora/status/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [pid] => 1
+    [rejudge] => Rejudge All Selected Submisssions
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 13:43:40]
+Query error:
+update runs set result = NULL, time = NULL where pid=1
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 13:45:02]
+Query error:
+insert into logs value ('1372839302', '127.0.0.1', 'Array
+(
+    [url] => /aurora/faq
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 15:25:47]
+Query error:
+insert into logs value ('1372845347', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 15:26:30]
+Query error:
+insert into logs value ('1372845390', '127.0.0.1', 'Array
+(
+    [url] => /aurora/adminlog
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 18:13:52]
+Query error:
+insert into logs value ('1372855432', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 18:15:19]
+Query error:
+insert into logs value ('1372855519', '127.0.0.1', 'Array
+(
+    [url] => /aurora/submit/TEST
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [lang] => C++
+    [sub] => #include <cstdio>
+using namespace std;
+int main(){
+  int n;
+  while(scanf(\"%d\", &n) != EOF){
+    printf(\"%d\\n\", n*n);
+  }
+  return 0;
+}
+    [probcode] => TEST
+    [submitcode] => Submit
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-03 18:15:19]
+Query error:
+INSERT INTO runs (pid,tid,language,name,code,access,submittime) VALUES ('1', '1', 'C++', 'Main', '#include <cstdio>
+using namespace std;
+int main(){
+  int n;
+  while(scanf(\"%d\", &n) != EOF){
+    printf(\"%d\\n\", n*n);
+  }
+  return 0;
+}', 'private', '1372855519')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-04 23:10:42]
+Query error:
+insert into logs value ('1372959642', '127.0.0.1', 'Array
+(
+    [RedirectUrl] => http://localhost/postered/account/
+    [url] => /aurora/problems/PAINT
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-09 08:38:25]
+Query error:
+insert into logs value ('1373339305', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-09 12:07:19]
+Query error:
+insert into logs value ('1373351839', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnansh
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-09 12:07:24]
+Query error:
+insert into logs value ('1373351844', '127.0.0.1', 'Array
+(
+    [url] => /aurora/
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-09 12:11:31]
+Query error:
+insert into logs value ('1373352091', '127.0.0.1', 'Array
+(
+    [url] => /aurora/home
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [logout] => 
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-10 21:19:13]
+Query error:
+insert into logs value ('1373471353', '127.0.0.1', 'Array
+(
+    [url] => /aurora/contests/cdad
+)
+', 'Array
+(
+    [teamname] => ACM
+    [password] => johnnash
+    [login] => Log In
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-10 21:20:16]
+Query error:
+insert into logs value ('1373471416', '127.0.0.1', 'Array
+(
+    [url] => /aurora/admincontest
+    [team] => Array
+        (
+            [id] => 1
+            [name] => ACM
+            [status] => Admin
+        )
+
+    [loggedin] => true
+)
+', 'Array
+(
+    [name] => CQM #0
+    [code] => CQM0
+    [starttime] => 11-07-2013 22:00:00
+    [endtime] => 12-07-2013 01:00:00
+    [announcement] => Some sort of notice
+    [addcontest] => Add Contest
+)
+' )
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
+[2013-07-10 21:20:16]
+Query error:
+insert into contest (code,name,starttime,endtime,announcement) values ('CQM0','CQM #0','1373560200','1373571000','Some sort of notice')
+Error: SQLSTATE[HY000]: General error
+/host/Program Files (x86)/EasyPHP-5.3.5.0/www/aurora/functions.php
+======================================================================
