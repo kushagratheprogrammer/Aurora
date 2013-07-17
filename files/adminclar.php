@@ -4,8 +4,24 @@ if (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == 'Admin') {
         $page = $_GET['page'];
     else
         $page = 1;
-    echo "<h1>Clarifications</h1>";
-    $query = 'from clar order by time desc';
+    $query = 'from clar';
+    if(!isset($_GET['group']) || $_GET['group'] == '' || $_GET['group'] == "pending"){
+        $tab = 'pending';
+        $query .= " where (reply = '' or reply is NULL) and access != 'deleted'";
+    } else if ($_GET['group'] == "replied"){
+        $tab = 'replied';
+        $query .= " where reply != '' and access != 'deleted'";
+    } else {
+        $tab = 'deleted';
+        $query .= " where access = 'deleted'";
+    }
+    $query .= " order by time desc";
+    echo "<h1>Clarifications</h1>
+        <ul class='nav nav-tabs'>
+            <li ".(($tab == 'pending')?("class='active'"):(""))."><a href='".SITE_URL."/adminclar&group=pending'>Pending</a></li>
+            <li ".(($tab == 'replied')?("class='active'"):(""))."><a href='".SITE_URL."/adminclar&group=replied'>Replied</a></li>
+            <li ".(($tab == 'deleted')?("class='active'"):(""))."><a href='".SITE_URL."/adminclar&group=deleted'>Deleted</a></li>
+        </ul>";
     $data = DB::findAllWithCount("select * ", $query, $page, 10);
     $result = $data['data'];
     foreach ($result as $row) {

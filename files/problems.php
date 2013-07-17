@@ -81,14 +81,14 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
         foreach ($group as $g) {
             echo "<tr><td colspan='6'><center><h3>$g</h3></center></td></tr><tr><th>ID</th><th>Name</th><th>Score</th><th>Type</th><th>Code</th><th>Submissions</th></tr>";
             if (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == "Admin") {
-                $query = "select * from problems where pgroup = '$g' order by pid";
+                $query = "select pid, name, code, status, pgroup, type, score from problems where pgroup = '$g' order by pid";
             } else {
-                $query = "select * from problems where status != 'Deleted' and pgroup = '$g' order by pid";
+                $query = "select pid, name, code, status, pgroup, type, score from problems where status != 'Deleted' and pgroup = '$g' order by pid";
             }
             $result = DB::findAllFromQuery($query);
             foreach ($result as $row) {
-                $query = "SELECT (SELECT count(*) FROM runs WHERE pid=$row[pid] AND result='AC' AND access!='deleted') as ac, (SELECT count(*) FROM runs WHERE pid=$row[pid] AND access!='deleted') as tot";
-                $subs = DB::findOneFromQuery($query);
+                $query = "SELECT (SELECT count(rid) FROM runs WHERE pid=$row[pid] AND result='AC' AND access!='deleted') as ac, (SELECT count(rid) FROM runs WHERE pid=$row[pid] AND access!='deleted') as tot";
+                 $subs = DB::findOneFromQuery($query);
                 echo "<tr><td><a href='" . SITE_URL . "/problems/$row[code]'>$row[pid]</a></td><td><a href='" . SITE_URL . "/problems/$row[code]'>$row[name]</a></td><td><a href='" . SITE_URL . "/problems/$row[code]'>$row[score]</a></td><td><a href='" . SITE_URL . "/problems/$row[code]'>$row[type]</a></td><td><a href='" . SITE_URL . "/submit/$row[code]'>$row[code]</a></td><td><a href='" . SITE_URL . "/problems/$row[code]'>$subs[ac]/$subs[tot]</a></td></tr>";
             }
         }

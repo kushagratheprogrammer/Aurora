@@ -27,7 +27,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 SyntaxHighlighter.all();
             </script> 
             <?php
-            $brush = array("Brain" => "text", "C" => "c", "C++" => "cpp", "C#" => "csharp", "Java" => "java", "Java", "JavaScript" => "js", "Pascal" => "pascal", "Perl" => "perl", "PHP" => "php", "Python" => "python", "Ruby" => "ruby", "Text" => "text");
+            $brush = array("Brain" => "text", "C" => "c", "C++" => "cpp", "C#" => "csharp", "Java" => "java", "Java", "JavaScript" => "js", "Pascal" => "Pascal", "Perl" => "perl", "PHP" => "php", "Python" => "python", "Ruby" => "ruby", "Text" => "text");
             $query = "select code, name, displayio, input, output, teamname from problems, teams where pid = $res[pid] and tid = $res[tid]";
             $prob = DB::findOneFromQuery($query);
             echo "<h1>Solution</h1>

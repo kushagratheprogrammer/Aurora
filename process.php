@@ -1,12 +1,12 @@
 <?php
 require_once 'config.php';
 function customhash($str){
-    return md5($str); // To help change the hashing for password saving if needed.
+    return $str; // To help change the hashing for password saving if needed.
 }
 $query = "select value from admin where variable='mode'";
 $judge = DB::findOneFromQuery($query);
 $query = "insert into logs value ('".time()."', '$_SERVER[REMOTE_ADDR]', '".  addslashes(print_r($_SESSION, TRUE))."', '".addslashes(print_r($_REQUEST, TRUE))."' )";
-DB::findAllFromQuery($query);
+DB::query($query);
 if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == 'Admin') || isset($_POST['login'])) {
 // ------------------ LOGIN ------------------- //
     if (isset($_POST['login'])) {
@@ -89,7 +89,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                             } else if ($res['status'] == 'Active' || $_SESSION['team']['status'] == 'Admin') { // Lvl 7
                                 $submittime = time();
                                 $query = "INSERT INTO runs (pid,tid,language,name,code,access,submittime) VALUES ('$res[pid]', '" . $_SESSION['team']['id'] . "', '$_POST[lang]', 'Main', '$sourcecode', 'private', '" . $submittime . "')";
-                                $res2 = DB::findAllFromQuery($query);
+                                $res2 = DB::query($query);
                                 $query = "select rid from runs where tid = " . $_SESSION['team']['id'] . " and pid = $res[pid] and submittime = $submittime";
                                 $result = DB::findOneFromQuery($query);
                                 if ($result) {
@@ -141,7 +141,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                     if ($res == NULL) {
                         $query = "Insert into teams (teamname, pass, status, name1, roll1, branch1, email1, phone1, name2, roll2, branch2, email2, phone2, name3, roll3, branch3, email3, phone3, score, penalty, gid) 
                         values ('" . addslashes($_POST['teamname']) . "', '" . customhash(addslashes($_POST['password'])) . "', 'Normal', '" . addslashes($_POST['name1']) . "', '" . addslashes($_POST['roll1']) . "','" . addslashes($_POST['branch1']) . "','" . addslashes($_POST['email1']) . "','" . addslashes($_POST['phno1']) . "','" . addslashes($_POST['name2']) . "', '" . addslashes($_POST['roll2']) . "', '" . addslashes($_POST['branch2']) . "', '" . addslashes($_POST['email2']) . "', '" . addslashes($_POST['phno2']) . "', '" . addslashes($_POST['name3']) . "', '" . addslashes($_POST['roll3']) . "', '" . addslashes($_POST['branch3']) . "','" . addslashes($_POST['email3']) . "','" . addslashes($_POST['phno3']) . "','0','0','" . addslashes($_POST['group']) . "')";
-                        $res = DB::findOneFromQuery($query);
+                        $res = DB::query($query);
                         $query = "select * from teams where teamname='" . addslashes($_POST['teamname']) . "'";
                         $res = DB::findOneFromQuery($query);
                         if ($res) {
@@ -179,7 +179,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                     $res = DB::findOneFromQuery($query);
                     if ($res) {
                         $query = "update teams set pass = '" . customhash(addslashes($_POST['pass1'])) . "' " . ((isset($_POST['group']) && $_POST['group'] != "") ? (", gid='" . addslashes($_POST['group']) . "' ") : ("")) . "where tid='" . $_SESSION['team']['id'] . "'";
-                        $res = DB::findOneFromQuery($query);
+                        $res = DB::query($query);
                         $_SESSION['msg'] = "Password Updated";
                         redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
                     } else {
@@ -193,7 +193,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             } else if (isset($_POST['group'])) {
                 if ($_POST['group'] != '') {
                     $query = "update teams set gid='" . addslashes($_POST['group']) . "' where tid='" . $_SESSION['team']['id'] . "'";
-                    $res = DB::findOneFromQuery($query);
+                    $res = DB::query($query);
                     $_SESSION['msg'] = "Group Updated";
                     redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
                 } else {
@@ -213,7 +213,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             if (isset($_POST['query']) && $_POST['query'] != "") {
                 $query = "Insert into clar (time, pid, tid, query, access) 
                 values ('" . time() . "', '" . addslashes($_POST['pid']) . "', '" . $_SESSION['team']['id'] . "', '" . addslashes($_POST['query']) . "', 'public')";
-                $res = DB::findAllFromQuery($query);
+                $res = DB::query($query);
                 $_SESSION['msg'] = "Clarification posted... we will reply soon.";
                 redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
             } else {
@@ -236,7 +236,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             $admin['penalty'] = $_POST['penalty'];
             foreach ($admin as $key => $val) {
                 $query = "update admin set value = '$val' where variable = '$key'";
-                DB::findAllFromQuery($query);
+                DB::query($query);
             }
             $_SESSION['msg'] = "Judge Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
@@ -260,7 +260,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 $prob['image'] = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
             }
             $query = "insert into problems (" . implode(array_keys($prob), ",") . ") values ('" . implode(array_values($prob), "','") . "')";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Problem Added.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset($_POST['updateproblem'])) {
@@ -289,7 +289,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             }
             foreach ($prob as $key => $val) {
                 $query = "update problems set $key = '$val' where pid=$pid";
-                DB::findAllFromQuery($query);
+                DB::query($query);
             }
             $_SESSION['msg'] = "Problem Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
@@ -302,7 +302,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             $newcontest['endtime'] = $date->getTimestamp();
             $newcontest['announcement'] = addslashes($_POST['announcement']);
             $query = "insert into contest (" . implode(array_keys($newcontest), ",") . ") values ('" . implode(array_values($newcontest), "','") . "')";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Contest Added.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset($_POST['updatecontest'])) {
@@ -316,7 +316,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             $newcontest['announcement'] = addslashes($_POST['announcement']);
             foreach ($newcontest as $key => $val) {
                 $query = "update contest set $key = '$val' where id=$id";
-                DB::findAllFromQuery($query);
+                DB::query($query);
             }
             $_SESSION['msg'] = "Contest Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
@@ -342,7 +342,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 $team['phone3'] = addslashes($_POST['phone3']);
                 foreach ($team as $key => $val) {
                     $query = "update teams set $key = '$val' where tid=$tid";
-                    DB::findAllFromQuery($query);
+                    DB::query($query);
                 }
                 $_SESSION['msg'] = "Team Updated.";
                 redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
@@ -371,7 +371,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             } else if (isset($_POST['pid'])) {
                 $query .= "pid=" . addslashes($_POST['pid']);
             }
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $client = stream_socket_client($admin['ip'] . ":" . $admin['port'], $errno, $errorMessage);
             if ($client === false) {
                 $_SESSION["msg"] .= "<br/>Cannot connect to Judge: Contact Admin";
@@ -382,27 +382,27 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset ($_POST['dq'])){
             $query = "update runs set result = 'DQ' where rid = ".addslashes($_POST['rid']);
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Solution Disqualified.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if(isset ($_POST['runaccess'])){
             $query = "update runs set access = '".  addslashes($_POST['access'])."' where rid = ".addslashes($_POST['rid']);
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Access Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if(isset ($_POST['judgesocket'])){
             $_POST['ip'] = addslashes($_POST['ip']);
             $query = "update admin set value='$_POST[ip]' where variable='ip'";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_POST['port'] = addslashes($_POST['port']);
             $query = "update admin set value='$_POST[port]' where variable='port'";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Socket Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if(isset ($_POST['judgenotice'])){
             $_POST['notice'] = addslashes($_POST['notice']);
             $query = "update admin set value='$_POST[notice]' where variable='notice'";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Notice Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset ($_POST['clarreply'])){
@@ -412,26 +412,26 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             $reply = addslashes($_POST['reply']);
             $access = addslashes($_POST['access']);
             $query = "update clar set reply='$reply', access='$access' where tid=$tid and pid=$pid and time=$time";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Reply Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset ($_POST['addgroup'])){
             $groupname = addslashes($_POST['groupname']);
             $query = "insert into groups (groupname) values ('$groupname')";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Group Created.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset ($_POST['updategroup'])){
             $gid = addslashes($_POST['gid']);
             $groupname = addslashes($_POST['groupname']);
             $query = "update groups set groupname ='$groupname' where gid=$gid";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Group Updated.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         } else if (isset ($_POST['deletegroup'])){
             $gid = addslashes($_POST['gid']);
             $query = "delete from groups where gid=$gid";
-            DB::findAllFromQuery($query);
+            DB::query($query);
             $_SESSION['msg'] = "Group Deleted.";
             redirectTo("http://" . $_SERVER['HTTP_HOST'] . $_SESSION['url']);
         }

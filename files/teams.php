@@ -47,7 +47,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 <tr>
                     <th>Practice Score</th><td>
                         <?php
-                        $query = "select sum(score) as tot from (select distinct(pid), (select score from problems where pid = runs.pid and contest = 'practice') as score from runs where pid in (select pid from problems where contest = 'practice' and status = 'Active') and result = 'AC')t";
+                        $query = "select sum(score) as tot from (select distinct(pid), (select score from problems where pid = runs.pid and contest = 'practice') as score from runs where pid in (select pid from problems where contest = 'practice' and status = 'Active') and result = 'AC' and tid = $res[tid])t";
                         $sco = DB::findOneFromQuery($query);
                         echo $sco['tot'];
                         ?></td>
@@ -63,7 +63,7 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 foreach ($result as $row) {
                     array_push($ac, $row['code']);
                     if ($row[code])
-                        echo "<div class='span1'><a href='" . SITE_URL . "/problems/$row[code]'>$row[code]</a></div>";
+                        echo "<div class='span2'><a href='" . SITE_URL . "/problems/$row[code]'>$row[code]</a></div>";
                 }
                 $query = "select distinct(pid), (select code from problems where pid = runs.pid and contest ='practice' and status='Active') as code from runs where tid = $res[tid]";
                 $result = DB::findAllFromQuery($query);
@@ -78,8 +78,8 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
             <div class='row'>
                 <?php
                 foreach ($wa as $value) {
-                    if ($row[code])
-                        echo "<div class='span1'><a href='" . SITE_URL . "/problems/$value'>$value</a></div>";
+                    if ($row[code] && $value != "")
+                        echo "<div class='span2'><a href='" . SITE_URL . "/problems/$value'>$value</a></div>";
                 }
                 ?>
             </div>    
