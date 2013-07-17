@@ -55,11 +55,11 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                             <form class="form-inline" method="post" action="<?php echo SITE_URL; ?>/process.php">
                                 <input type="hidden" value="<?php echo $res['rid']; ?>" name="rid" />
                                 <select name="access">
-                                <option value="public" <?php if($res['access'] == "public") echo "selected='selected' "; ?>>Public</option>
-                                <option value="private" <?php if($res['access'] == "private") echo "selected='selected' "; ?>>Private</option>
-                                <option value="deleted" <?php if($res['access'] == "deleted") echo "selected='selected' "; ?>>Deleted</option>
-                            </select>
-                            <input type="submit" name="runaccess" value="Update" class="btn btn-danger"/>
+                                    <option value="public" <?php if ($res['access'] == "public") echo "selected='selected' "; ?>>Public</option>
+                                    <option value="private" <?php if ($res['access'] == "private") echo "selected='selected' "; ?>>Private</option>
+                                    <option value="deleted" <?php if ($res['access'] == "deleted") echo "selected='selected' "; ?>>Deleted</option>
+                                </select>
+                                <input type="submit" name="runaccess" value="Update" class="btn btn-danger"/>
                             </form>
                         </td>
                     </tr>
@@ -71,11 +71,23 @@ if ($judge['value'] != "Lockdown" || (isset($_SESSION['loggedin']) && $_SESSION[
                 echo "<h4>Error</h4><div class='limit'><pre class='brush: text'>$res[error]</pre></div>";
             }
             if (($prob['displayio'] == 1 && ($res['result'] == 'AC' || $res['result'] == 'WA' || $res['result'] == 'PE')) || (isset($_SESSION['loggedin']) && $_SESSION['team']['status'] == 'Admin' && strlen($prob['input']) <= 102400)) {
+                $correct = explode("\n", $prob['output']);
+                $output = explode("\n", $res['output']);
+                $lines = array();
+                for ($i = 0; $i < count($correct) || $i < count($output); ) {
+                    if ($i < count($correct) && $i < count($output) && $correct[$i] != $output[$i]) {
+                        array_push($lines, $i+1);
+                    } else if ($i > count($correct) && $i < count($output)) {
+                        array_push($lines, $i+1);
+                    }
+                    $i++;
+                }
+                $lines = "[".  implode(',', $lines). "]";
                 ?>
                 <div class='row'>
                     <div class='span3' style='overflow-x: auto;'><h4>Input</h4><div class='limit'><pre class='brush: text'><?php echo $prob['input']; ?></pre></div></div>
                     <div class='span3' style='overflow-x: auto;'><h4>Correct Output</h4><div class='limit'><pre class='brush: text'><?php echo $prob['output']; ?></pre></div></div>
-                    <div class='span3' style='overflow-x: auto;'><h4>Actual Output</h4><div class='limit'><pre class='brush: text'><?php echo ($res['result'] != 'AC') ? ($res['output']) : ($prob['output']); ?></pre></div></div>                
+                    <div class='span3' style='overflow-x: auto;'><h4>Actual Output</h4><div class='limit'><pre class='brush: text;<?php if($res['result'] != 'AC') echo "highlight: ".$lines; ?>;' id="output"><?php echo ($res['result'] != 'AC') ? ($res['output']) : ($prob['output']); ?></pre></div></div>                
                 </div>
                 <?php
             }
